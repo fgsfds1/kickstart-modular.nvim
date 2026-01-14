@@ -58,6 +58,7 @@ return {
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         preset = 'default',
+        -- ['<A-y>'] = require('minuet').make_blink_map(),
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -76,9 +77,16 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        default = { 'lsp', 'path', 'snippets', 'lazydev', 'minuet' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          minuet = {
+            name = 'minuet',
+            module = 'minuet.blink',
+            async = true,
+            timeout_ms = 10000,
+            score_offset = 50,
+          },
         },
       },
 

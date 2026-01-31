@@ -61,57 +61,57 @@ require('lazy').setup({
   -- require 'kickstart.plugins.neo-tree',
 
   -- Minuet-ai (autocomplete using LLM)
-  {
-    'milanglacier/minuet-ai.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' }, -- required
-    config = function()
-      require('minuet').setup {
-        -- for use with LM Studio, use the openai compatible API
-        provider = 'openai_fim_compatible',
-        n_completions = 2, -- 1 is best for local to save resources
-        provider_options = {
-          openai_fim_compatible = {
-            api_key = 'TERM', -- dummy value, LM Studio ignores it
-            name = 'LM Studio',
-            end_point = 'http://localhost:1234/v1/completions', -- ← your LM Studio server
-            model = 'qwen/qwen2.5-coder-14b', -- optional; LM Studio usually fixes it
-            optional = {
-              max_tokens = 64, -- tune for speed vs length
-              -- temperature = 0.2,
-              top_p = 0.9,
-            },
-          },
-        },
+  -- {
+  --   'milanglacier/minuet-ai.nvim',
+  --   dependencies = { 'nvim-lua/plenary.nvim' }, -- required
+  --   config = function()
+  --     require('minuet').setup {
+  --       -- for use with LM Studio, use the openai compatible API
+  --       provider = 'openai_fim_compatible',
+  --       n_completions = 2, -- 1 is best for local to save resources
+  --       provider_options = {
+  --         openai_fim_compatible = {
+  --           api_key = 'TERM', -- dummy value, LM Studio ignores it
+  --           name = 'LM Studio',
+  --           end_point = 'http://localhost:1234/v1/completions', -- ← your LM Studio server
+  --           model = 'qwen/qwen2.5-coder-14b',
+  --           optional = {
+  --             max_tokens = 64, -- tune for speed vs length
+  --             -- temperature = 0.2,
+  --             top_p = 0.9,
+  --           },
+  --         },
+  --       },
 
-        -- keymap config to use with virtualtext
-        -- virtualtext = {
-        --   auto_trigger_ft = {},
-        --   keymap = {
-        --     -- accept whole completion
-        --     accept = '<A-A>',
-        --     -- accept one line
-        --     accept_line = '<A-a>',
-        --     -- accept n lines (prompts for number)
-        --     -- e.g. "A-z 2 CR" will accept 2 lines
-        --     accept_n_lines = '<A-z>',
-        --     -- Cycle to prev completion item, or manually invoke completion
-        --     prev = '<A-[>',
-        --     -- Cycle to next completion item, or manually invoke completion
-        --     next = '<A-]>',
-        --     dismiss = '<A-e>',
-        --   },
-        -- },
+  --       -- keymap config to use with virtualtext
+  --       -- virtualtext = {
+  --       --   auto_trigger_ft = {},
+  --       --   keymap = {
+  --       --     -- accept whole completion
+  --       --     accept = '<A-A>',
+  --       --     -- accept one line
+  --       --     accept_line = '<A-a>',
+  --       --     -- accept n lines (prompts for number)
+  --       --     -- e.g. "A-z 2 CR" will accept 2 lines
+  --       --     accept_n_lines = '<A-z>',
+  --       --     -- Cycle to prev completion item, or manually invoke completion
+  --       --     prev = '<A-[>',
+  --       --     -- Cycle to next completion item, or manually invoke completion
+  --       --     next = '<A-]>',
+  --       --     dismiss = '<A-e>',
+  --       --   },
+  --       -- },
 
-        blink = {
-          enable_auto_complete = true,
-        },
+  --       blink = {
+  --         enable_auto_complete = true,
+  --       },
 
-        -- Pick your preferred frontend:
-        -- virtual_text = true,               -- ghost text (Copilot style) ← most popular
-        -- or integrate with nvim-cmp / blink.cmp
-      }
-    end,
-  },
+  --       -- Pick your preferred frontend:
+  --       -- virtual_text = true,               -- ghost text (Copilot style) ← most popular
+  --       -- or integrate with nvim-cmp / blink.cmp
+  --     }
+  --   end,
+  -- },
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

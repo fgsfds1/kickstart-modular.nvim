@@ -1,6 +1,10 @@
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    -- Pin to the archived `master` branch (old API with `nvim-treesitter.configs`).
+    -- The new `main` branch is a rewrite that removed that module, which breaks this config.
+    -- Matches the pin on ssh lw@10.14.47.8 (commit 42fc28ba).
+    branch = 'master',
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`

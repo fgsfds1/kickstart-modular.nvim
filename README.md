@@ -1,5 +1,9 @@
 # kickstart-modular.nvim
 
+> **Note:** This repo is no longer updated. The Neovim config moved into the
+> [dotfiles repo](https://github.com/fgsfds1/dotfiles), under `dot_config/nvim/`
+> (chezmoi-managed). Make future changes there.
+
 ## Introduction
 
 *This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
